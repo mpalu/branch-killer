@@ -10,6 +10,8 @@ for project in */ ; do
   DELETE_MESSAGE="- Deleting local branches from $project"
   echo "${DELETE_MESSAGE%?}"
   git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D > /dev/null 2>&1
+  git fetch
+  git branch --prune
   
   cd ..
 done
