@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECTS_FOLDER="$HOME/WorkSpace/"
+PROJECTS_FOLDER="$1"
 
 cd "$PROJECTS_FOLDER" || exit
 
@@ -10,8 +10,8 @@ for project in */ ; do
   DELETE_MESSAGE="- Deleting local branches from $project"
   echo "${DELETE_MESSAGE%?}"
   git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D > /dev/null 2>&1
-  git fetch
-  git branch --prune
+  git fetch > /dev/null 2>&1
+  git branch --prune > /dev/null 2>&1
   
   cd ..
 done
