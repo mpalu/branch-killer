@@ -4,5 +4,5 @@ Let's kill unused git branches locally
 
 ## Usage
 
-`./branch-killer.sh $PROJECTS_DIRECTORY`
-`$PROJECTS_DIRECTORY` is the container directory where the git projects lives
+`./branch-killer.sh $WORKDIR`
+`$WORKDIR` is the path to the container directory where the git projects lives
