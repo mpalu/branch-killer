@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PROJECTS_FOLDER="$1"
+WORKDIR="$1"
 
-cd "$PROJECTS_FOLDER" || exit
+cd "$WORKDIR" || exit
 
 for project in */ ; do
   cd "$project" || exit
